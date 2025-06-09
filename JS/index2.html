@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sach hoc sinh</title>
+    <script src="script_09062025.js"></script>
+    <style>
+        td {
+            border: 2px solid black
+        }
+    </style>
+</head>
+<body>
+    <h1>Quản lý học sinh</h1>
+    <label for="luachon">Lọc học sinh theo</label>
+    <select name="luachon" id="luachon">
+        <option value="luachontatca">Tất cả (mặc định)</option>
+        <option value="luachonlop8A">Lớp 8A</option>
+        <option value="luachonlop8B">Lớp 8B</option>
+    </select>
+    <button type="submit" onclick="lochocsinh()">Lọc!</button><br>
+
+    <label for="">Sắp xếp học sinh theo</label>
+    <select name="" id="sapxep">
+        <option value="sapXepTenASC">Tên (A-Z)</option>
+        <option value="sapXepTenDEC">Tên (Z-A)</option>
+        <option value="sapXepDTBasc">Điểm trung bình (Nhỏ -> Lớn)</option>
+        <option value="sapXepDTBdec">Điểm trung bình (Lớn -> Nhỏ)</option>
+    </select>
+    <button type="submit" onclick="sapxephocsinh()">Sắp xếp!</button><br>
+    <label for="">Sắp xếp học sinh theo 2 loại</label>
+    <select name="" id="sapxep2loaiten">
+        <option value="sapXepTenASC">Tên (A-Z)</option>
+        <option value="sapXepTenDEC">Tên (Z-A)</option>
+    </select>
+    <select name="" id="sapxep2loaidiem">
+        <option value="sapXepDTBasc">Điểm trung bình (Nhỏ -> Lớn)</option>
+        <option value="sapXepDTBdec">Điểm trung bình (Lớn -> Nhỏ)</option>
+    </select>
+    <button type="submit" onclick="sapxephs2loai()">Sắp xếp!</button><br>
+    <br>
+    <input type="text" name="" id="mahocsinh" placeholder="Mã học sinh">
+    <input type="text" name="" id="tenhocsinh" placeholder="Tên học sinh">
+    <input type="number" name="" id="tuoihocsinh" placeholder="Tuổi học sinh">
+    <select name="chongioitinh" id="chongioitinh">
+        <option value="nam">Nam</option>
+        <option value="nu">Nữ</option>
+    </select>
+    <input type="number" name="" id="chieucaohocsinh" placeholder="Chiều cao học sinh (cm)">
+    <input type="number" name="" id="cannanghocsinh" placeholder="Cân nặng học sinh (kg)">
+    <select name="" id="lophocsinh">
+        <option value="8A">8A</option>
+        <option value="8B">8B</option>
+    </select>
+    <input type="number" name="" id="diemtbhocsinh" placeholder="Điểm trung bình học sinh">
+    <button type="submit" onclick="quanlyhocsinh()">Submit</button>
+    <button type="submit" onclick="help()">Giúp tôi!</button>
+    <table>
+        <thead>
+            <tr>
+                <td>Mã Học Sinh</td>
+                <td>Tên</td>
+                <td>Tuổi</td>
+                <td>Giới Tính</td>
+                <td>Chiều Cao</td>
+                <td>Cân nặng</td>
+                <td>Lớp</td>
+                <td>Điểm trung bình</td>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <td>Mã Học Sinh</td>
+                <td>Tên</td>
+                <td>Tuổi</td>
+                <td>Giới Tính</td>
+                <td>Chiều Cao</td>
+                <td>Cân nặng</td>
+                <td>Lớp</td>
+                <td>Điểm trung bình</td>
+            </tr>
+        </thead>
+        <tbody id="tbody2">
+
+        </tbody>
+    </table>
+
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <td>Mã Học Sinh</td>
+                <td>Tên</td>
+                <td>Tuổi</td>
+                <td>Giới Tính</td>
+                <td>Chiều Cao</td>
+                <td>Cân nặng</td>
+                <td>Lớp</td>
+                <td>Điểm trung bình</td>
+            </tr>
+        </thead>
+        <tbody id="tbody3">
+
+        </tbody>
+    </table><br>
+    <table>
+        <thead>
+            <tr>
+                <td>Mã Học Sinh</td>
+                <td>Tên</td>
+                <td>Tuổi</td>
+                <td>Giới Tính</td>
+                <td>Chiều Cao</td>
+                <td>Cân nặng</td>
+                <td>Lớp</td>
+                <td>Điểm trung bình</td>
+            </tr>
+        </thead>
+        <tbody id="tbody4">
+
+        </tbody>
+    </table>
+</body>
+</html>
