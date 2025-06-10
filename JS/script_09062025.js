@@ -247,3 +247,10 @@ function sapxephs2loai() {
         tbody.append(tr)
         })
 }
+
+function reset() {
+  const tbody = document.getElementById('tbody')
+
+  danhsachhs = []
+  tbody.innerHTML = ''
+}
