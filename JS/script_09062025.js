@@ -107,7 +107,7 @@ function lochocsinh() {
     else if (luachon == 'luachontatca') {
         danhsachhsfilter = danhsachhs
     }
-    const tbody = document.getElementById('tbody2')
+    const tbody = document.getElementById('tbody')
     tbody.innerHTML = ''
 
     danhsachhsfilter.forEach(item => {
@@ -171,7 +171,7 @@ function sapxephocsinh() {
         danhsachhssort = danhsachhs.sort((a, b) => b.diemtb-a.diemtb)
     }
 
-    const tbody = document.getElementById('tbody3')
+    const tbody = document.getElementById('tbody')
     tbody.innerHTML = ''
 
     danhsachhssort.forEach(item => {
@@ -202,28 +202,28 @@ function sapxephocsinh() {
 function sapxephs2loai() {
     const sapxepten = document.getElementById('sapxep2loaiten').value
     const sapxepdiem = document.getElementById('sapxep2loaidiem').value
-    let danhsachhssort = []
-    if (sapxepten == 'sapXepTenASC' && sapxepdiem == 'sapXepDTBasc') {
-        danhsachhssort = sortNameAZ(danhsachhs)
-        danhsachhssort = danhsachhs.sort((a, b) => a.diemtb-b.diemtb)
-    }
-    else if (sapxepten == 'sapXepTenASC' && sapxepdiem == 'sapXepDTBdec') {
-        danhsachhssort = sortNameAZ(danhsachhs)
-        danhsachhssort = danhsachhs.sort((a, b) => b.diemtb-a.diemtb)
-    }
-    else if (sapxepten == 'sapXepTenASC' && sapxepdiem == 'sapXepDTBasc') {
-        danhsachhssort = sortNameZA(danhsachhs)
-        danhsachhssort = danhsachhs.sort((a, b) => a.diemtb-b.diemtb)
-    }
-    else if (sapxepten == 'sapXepTenASC' && sapxepdiem == 'sapXepDTBdec') {
-        danhsachhssort = sortNameZA(danhsachhs)
-        danhsachhssort = danhsachhs.sort((a, b) => b.diemtb-a.diemtb)
+
+    let danhsachsort = danhsachhs
+
+    if (sapxepdiem === 'sapXepDTBasc') {
+    danhsachsort.sort((a, b) => a.diemtb - b.diemtb)
+    } 
+    else if (sapxepdiem === 'sapXepDTBdec') {
+      danhsachsort.sort((a, b) => b.diemtb - a.diemtb)
     }
 
-    const tbody = document.getElementById('tbody4')
+    if (sapxepten === "sapXepTenASC") {
+      danhsachsort = sortNameAZ(danhsachsort)
+    } 
+    else if (sapxepten === "sapXepTenDEC") {
+      danhsachsort = sortNameZA(danhsachsort)
+    }
+
+
+    const tbody = document.getElementById('tbody')
     tbody.innerHTML = ''
 
-    danhsachhssort.forEach(item => {
+    danhsachsort.forEach(item => {
         const tr = document.createElement('tr')
         const mahstd = document.createElement('td')
         const tenhstd = document.createElement('td')
