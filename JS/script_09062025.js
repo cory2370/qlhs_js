@@ -1,10 +1,8 @@
 let danhsachhs = [];
 let danhsachreset = [];
-
 function showdata(danhsach) {
   const tbody = document.getElementById("tbody");
   tbody.innerHTML = "";
-
   danhsach.forEach((item) => {
     const tr = document.createElement("tr");
     const mahstd = document.createElement("td");
@@ -40,25 +38,15 @@ function showdata(danhsach) {
 }
 
 function quanlyhocsinh() {
-  const mahs = document.getElementById('mahocsinh').value
-  const tenhs = document.getElementById('tenhocsinh').value
-  const tuoihs = document.getElementById('tuoihocsinh').value
-  const gioitinhhs = document.getElementById('chongioitinh').value
-  const chieucaohs = document.getElementById('chieucaohocsinh').value
-  const cannanghs = document.getElementById('cannanghocsinh').value
-  const lophs = document.getElementById('lophocsinh').value
-  const diemtbhs = document.getElementById('diemtbhocsinh').value
+  const mahs = document.getElementById("mahocsinh").value;
+  const tenhs = document.getElementById("tenhocsinh").value;
+  const tuoihs = document.getElementById("tuoihocsinh").value;
+  const gioitinhhs = document.getElementById("chongioitinh").value;
+  const chieucaohs = document.getElementById("chieucaohocsinh").value;
+  const cannanghs = document.getElementById("cannanghocsinh").value;
+  const lophs = document.getElementById("lophocsinh").value;
+  const diemtbhs = document.getElementById("diemtbhocsinh").value;
   let check = false;
-
-  const tr = document.createElement("tr");
-  const mahstd = document.createElement("td");
-  const tenhstd = document.createElement("td");
-  const tuoihstd = document.createElement("td");
-  const gioitinhhstd = document.createElement("td");
-  const chieucaohstd = document.createElement("td");
-  const cannanghstd = document.createElement("td");
-  const lophstd = document.createElement("td");
-  const diemtbhstd = document.createElement("td");
 
   let thongtinhs = {
     ma: mahs,
@@ -71,15 +59,6 @@ function quanlyhocsinh() {
     diemtb: diemtbhs,
   };
 
-  mahstd.textContent = mahs;
-  tenhstd.textContent = tenhs;
-  tuoihstd.textContent = tuoihs;
-  gioitinhhstd.textContent = gioitinhhs;
-  chieucaohstd.textContent = chieucaohs;
-  cannanghstd.textContent = cannanghs;
-  lophstd.textContent = lophs;
-  diemtbhstd.textContent = diemtbhs;
-
   danhsachhs.forEach((item) => {
     if (item.ma === mahs) {
       check = true;
@@ -87,19 +66,9 @@ function quanlyhocsinh() {
   });
 
   if (check === false) {
-    tr.append(
-      mahstd,
-      tenhstd,
-      gioitinhhstd,
-      tuoihstd,
-      chieucaohstd,
-      cannanghstd,
-      lophstd,
-      diemtbhstd
-    );
-    tbody.append(tr);
     danhsachhs.push(thongtinhs);
     danhsachreset.push(thongtinhs);
+    showdata(danhsachhs);
   } else if (check === true) {
     alert("Thong tin khong hop le");
   }
@@ -115,7 +84,7 @@ function lochocsinh() {
   } else if (luachon == "luachontatca") {
     danhsachhsfilter = danhsachhs;
   }
- showdata(danhsachhsfilter)
+  showdata(danhsachhsfilter);
 }
 
 const sortNameAZ = (list) => {
@@ -134,54 +103,28 @@ const sortNameZA = (list) => {
   });
 };
 
-function sapxephocsinh() {
+function sapxepten() {
   let danhsachsapxep = danhsachhs;
-  const sapxep = document.getElementById("sapxep").value;
 
   if (sapxep == "sapXepTenASC") {
     danhsachsapxep = sortNameAZ(danhsachsapxep);
   } else if (sapxep == "sapXepTenDEC") {
     console.log(danhsachsapxep);
     danhsachsapxep = sortNameZA(danhsachsapxep);
-  } else if (sapxep == "sapXepDTBasc") {
-    danhsachsapxep = danhsachsapxep.sort((a, b) => a.diemtb - b.diemtb);
-  } else if (sapxep == "sapXepDTBdec") {
-    danhsachsapxep = danhsachsapxep.sort((a, b) => b.diemtb - a.diemtb);
   }
 
-  const tbody = document.getElementById("tbody");
-  tbody.innerHTML = "";
-
-  showdata(danhsachsapxep)
+  showdata(danhsachsapxep);
 }
 
-function sapxephs2loai() {
-  const sapxepten = document.getElementById("sapxep2loaiten").value;
-  const sapxepdiem = document.getElementById("sapxep2loaidiem").value;
+function sapxepdtb() {
+  let danhsachsort = danhsachhs.sort((a, b) => b.diemtb - a.diemtb)
 
-  let danhsachsort = danhsachhs;
-
-  if (sapxepdiem === "sapXepDTBasc") {
-    danhsachsort.sort((a, b) => a.diemtb - b.diemtb);
-  } else if (sapxepdiem === "sapXepDTBdec") {
-    danhsachsort.sort((a, b) => b.diemtb - a.diemtb);
-  }
-
-  if (sapxepten === "sapXepTenASC") {
-    danhsachsort = sortNameAZ(danhsachsort);
-  } else if (sapxepten === "sapXepTenDEC") {
-    danhsachsort = sortNameZA(danhsachsort);
-  }
-
-  const tbody = document.getElementById("tbody");
-  tbody.innerHTML = "";
-
-  showdata(danhsachsort)
+  if (danhsachsort = danhsachhs.sort((a, b) => a.diemtb - b.diemtb)) {
+    danhsachsort = danhsachhs.sort((a, b) => b.diemtb - a.diemtb);
+  } else (danhsachsort = danhsachhs.sort((a, b) => a.diemtb - b.diemtb))
+  showdata(danhsachsort);
 }
 
 function reset() {
-  let tbody = document.getElementById("tbody");
-  tbody.innerHTML = "";
-
-  showdata(danhsachreset)
+  showdata(danhsachreset);
 }

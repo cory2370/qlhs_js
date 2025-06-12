@@ -28,12 +28,6 @@
         <option value="sapXepDTBasc">Điểm trung bình (Nhỏ -> Lớn)</option>
         <option value="sapXepDTBdec">Điểm trung bình (Lớn -> Nhỏ)</option>
     </select>
-    <button type="submit" onclick="sapxephocsinh()">Sắp xếp!</button><br>
-    <label for="">Sắp xếp học sinh theo 2 loại</label>
-    <select name="" id="sapxep2loaiten">
-        <option value="sapXepTenASC">Tên (A-Z)</option>
-        <option value="sapXepTenDEC">Tên (Z-A)</option>
-    </select>
     <select name="" id="sapxep2loaidiem">
         <option value="sapXepDTBasc">Điểm trung bình (Nhỏ -> Lớn)</option>
         <option value="sapXepDTBdec">Điểm trung bình (Lớn -> Nhỏ)</option>
@@ -61,13 +55,13 @@
         <thead>
             <tr>
                 <td>Mã Học Sinh</td>
-                <td>Tên</td>
+                <td onclick="sapxepten()">Tên</td>
                 <td>Tuổi</td>
                 <td>Giới Tính</td>
                 <td>Chiều Cao</td>
                 <td>Cân nặng</td>
                 <td>Lớp</td>
-                <td>Điểm trung bình</td>
+                <td onclick="sapxepdtb()">Điểm trung bình</td>
             </tr>
         </thead>
         <tbody id="tbody">
