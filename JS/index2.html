@@ -34,6 +34,7 @@
     </select>
     <button type="submit" onclick="sapxephs2loai()">Sắp xếp!</button><br>
     <button type="submit" onclick="reset()">Làm Mới</button><br>
+    <button type="submit" onclick="kiemTraXuatHien()">Submit</button><br>
     <br>
     <input type="text" name="" id="mahocsinh" placeholder="Mã học sinh">
     <input type="text" name="" id="tenhocsinh" placeholder="Tên học sinh">
@@ -50,22 +51,42 @@
     </select>
     <input type="number" name="" id="diemtbhocsinh" placeholder="Điểm trung bình học sinh">
     <button type="submit" onclick="quanlyhocsinh()">Submit</button>
-    <button type="submit" onclick="help()">Giúp tôi!</button>
     <table>
         <thead>
             <tr>
                 <td>Mã Học Sinh</td>
-                <td onclick="sapxepten()">Tên</td>
+                <td onclick="handleSort('ten')">Tên</td>
                 <td>Tuổi</td>
                 <td>Giới Tính</td>
                 <td>Chiều Cao</td>
                 <td>Cân nặng</td>
                 <td>Lớp</td>
-                <td onclick="sapxepdtb()">Điểm trung bình</td>
+                <td onclick="handleSort('diemtb')">Điểm trung bình</td>
             </tr>
         </thead>
         <tbody id="tbody">
 
         </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <td>1 Diem</td>
+                <td>2 Diem</td>
+                <td>3 Diem</td>
+                <td>4 Diem</td>
+                <td>5 Diem</td>
+                <td>6 Diem</td>
+                <td>7 Diem</td>
+                <td>8 Diem</td>
+                <td>9 Diem</td>
+                <td>10 Diem</td>
+            </tr>
+        </thead>
+        <tbody id="tbody2">
+            
+        </tbody>
+    </table>
 </body>
 </html>
